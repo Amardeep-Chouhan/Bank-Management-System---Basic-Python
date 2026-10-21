@@ -77,5 +77,8 @@ check = int(input(" Enter the input to procced : "))
 
 if check==1:
     user.Createaccount()
+
+if check==2:
+    user.depositmoney()
     
     
