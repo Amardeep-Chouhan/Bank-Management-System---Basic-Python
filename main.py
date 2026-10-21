@@ -21,7 +21,14 @@ class Bank:
         with open(cls.database,'w') as fs:
             fs.write(json.dumps(Bank.data))
 
-  
+    @classmethod
+    def __accountgenerate(cls):
+        alpha = random.choices(string.ascii_letters,k = 3)
+        num = random.choices(string.digits,k= 3)
+        spchar = random.choices("!@#$%^&*",k = 1)
+        id = alpha + num + spchar
+        random.shuffle(id)
+        return "".join(id)
 
     def Createaccount(self):
         
@@ -44,7 +51,7 @@ class Bank:
             for i in info:
                 print(f"{i} : {info[i]}")
             print("please note down your account number")
-
+            
             Bank.data.append(info)
 
             Bank.__update()
