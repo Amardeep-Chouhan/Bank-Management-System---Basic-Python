@@ -57,6 +57,13 @@ class Bank:
             Bank.__update()
 
 
+    def depositmoney(self):
+        accnumber = input("please tell your account number ")
+        pin = int(input("please tell your pin aswell "))
+
+        userdata = [i for i in Bank.data if i['accountNo.'] == accnumber and i['pin'] == pin]
+
+
 
 user = Bank()
 print("press 1 for Creating an account")
