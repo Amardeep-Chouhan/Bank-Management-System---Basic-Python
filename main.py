@@ -27,7 +27,14 @@ class Bank:
             "balance":0,
 
         }
+        if info['age'] < 18  or len(str(info['pin'])) != 4:  
         
+            print(f"sorry you cannot create your account {info["age"]}<18")
+        else:
+            print("account has been created successfully")
+            for i in info:
+                print(f"{i} : {info[i]}")
+            print("please note down your account number")
 
 
 print("press 1 for Creating an account")
