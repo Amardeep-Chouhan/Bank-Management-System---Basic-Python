@@ -33,11 +33,11 @@ class Bank:
     def Createaccount(self):
         
         info={
-            "name":input("enter your name: "),
+            "name":input("enter your name: "), 
             "age":int(input("enter your age: ")),
             "email":input("enter your email: "),
             "pin":input("enter 4 digit pin number: "),
-            "account_number":1234,
+            "account_number":Bank.__accountgenerate(),
             "balance":0,
 
         }
@@ -69,7 +69,6 @@ print("press 6 for Deleting your account")
 check = int(input(" Enter the input to procced : "))
 
 if check==1:
-    print(user.numss)
     user.Createaccount()
     
     
