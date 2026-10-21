@@ -17,7 +17,17 @@ class Bank:
         print(f"an exception occured as {err}")
 
 
-    
+    def Createaccount(self):
+        info={
+            "name":input("enter your name: "),
+            "age":int(input("enter your age: ")),
+            "email":input("enter your email: "),
+            "pin":input("enter 4 digit pin number: "),
+            "account_number":1234,
+            "balance":0,
+
+        }
+        
 
 
 print("press 1 for Creating an account")
