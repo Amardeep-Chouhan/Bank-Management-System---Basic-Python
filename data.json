@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "name": "Aarav Sharma",
+        "age": 25,
+        "email": "aarav@example.com",
+        "pin": "1234",
+        "account_number": "Abc123#",
+        "balance": 5000
+    },
+    {
+        "name": "Priya Patel",
+        "age": 30,
+        "email": "priya@example.com",
+        "pin": "5678",
+        "account_number": "Xyz789$",
+        "balance": 12500
+    },
+    {
+        "name": "Rahul Verma",
+        "age": 22,
+        "email": "rahul@example.com",
+        "pin": "9876",
+        "account_number": "Mno456!",
+        "balance": 1500
+    }
+]
