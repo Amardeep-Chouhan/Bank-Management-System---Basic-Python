@@ -7,14 +7,16 @@ class Bank:
     database = 'data.json'
     data = []
     
-    try:
-        if Path(database).exists():
-            with open(database, 'r') as fs:
-                data = json.loads(fs.read())
-        else:
-            print("no such file exist ")
-    except Exception as err:
-        print(f"an exception occured as {err}")
+    def __init__(self):
+        # Load data safely when an object is created
+        try:
+            if Path(Bank.database).exists():
+                with open(Bank.database, 'r') as fs:
+                    Bank.data = json.load(fs)
+            else:
+                print("No such file exists. Starting fresh.")
+        except Exception as err:
+            print(f"An exception occurred as {err}")
 
     @classmethod
     def __update(cls):
@@ -63,6 +65,17 @@ class Bank:
 
         userdata = [i for i in Bank.data if i['accountNo.'] == accnumber and i['pin'] == pin]
 
+        if userdata == False:
+            print("Please Input Correct Crendiatials")
+
+        else:
+            amount =int(input("plese enter the amount: "))
+            if amount<=0:
+                print(f"amount money can't be zero or negative{amount}")
+            else:
+                userdata[0]['balance']+=amount
+                Bank.__update()
+
 
 
 user = Bank()
@@ -81,4 +94,5 @@ if check==1:
 if check==2:
     user.depositmoney()
     
-    
+ 
+
