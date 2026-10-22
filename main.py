@@ -38,8 +38,8 @@ class Bank:
             "name":input("enter your name: "), 
             "age":int(input("enter your age: ")),
             "email":input("enter your email: "),
-            "pin":input("enter 4 digit pin number: "),
-            "account_number":Bank.__accountgenerate(),
+            "pin":int(input("enter 4 digit pin number: ")),
+            "accountNo.":Bank.__accountgenerate(),
             "balance":0,
 
         }
@@ -61,12 +61,12 @@ class Bank:
 
     def depositmoney(self):
         accnumber = input("please tell your account number ")
-        pin = int(input("please tell your pin aswell "))
+        pin = int(input("please tell your pin as well "))
 
         userdata = [i for i in Bank.data if i['accountNo.'] == accnumber and i['pin'] == pin]
 
-        if userdata == False:
-            print("Please Input Correct Crendiatials")
+        if not userdata:
+            print("Please Input Correct credentials.")
 
         else:
             amount =int(input("plese enter the amount: "))
@@ -75,7 +75,7 @@ class Bank:
             else:
                 userdata[0]['balance']+=amount
                 Bank.__update()
-
+                print(f"Successfully deposited {amount}. New balance is {userdata[0]['balance']}.")
 
 
 user = Bank()
